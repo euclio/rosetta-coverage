@@ -52,7 +52,7 @@
       <p>CSS created for <a href="http://arewewebyet.com">arewewebyet.com</a> by <a href=http://chrismorgan.info/>Chris Morgan</a> et al.; licensed <a rel=license href=http://creativecommons.org/licenses/by/3.0/>CC-BY</a>.</p>
     </footer>
     <script type="text/javascript">
-      var tasksTemplate = Handlebars.compile(document.getElementById('tasks-template').innerText);
+      var tasksTemplate = Handlebars.compile(document.getElementById('tasks-template').textContent);
       var firebase = new Firebase("https://rosetta-coverage.firebaseio.com/");
       firebase.child("tasks").once("value", function(snapshot) {
         var html = tasksTemplate(snapshot.val());
