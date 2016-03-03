@@ -161,13 +161,10 @@ td[title~=No], td.no {
   background-color: rgba(255, 0, 0, 0.25);
   color: #550000;
 }
-td[title~=No]::after { content: '✗'; }
-
 td[title~=Yes], td.yes {
   background-color: rgba(0, 204, 0, 0.25);
   color: #005500;
 }
-td[title~=Yes]::after { content: '✓'; }
 
 td[title~=Almost], td.almost {
   background-color: rgba(204, 204, 0, 0.25);
