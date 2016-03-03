@@ -9,13 +9,25 @@
     <link rel="stylesheet" href="vendor/arewewebyet.css" />
   </head>
   <body>
+    <header>
+      <h1>Rust-Rosetta Coverage</h1>
+    </header>
+    <p>This site contains a record of every task on <a href="http://rosettacode.org">RosettaCode</a>. Each task is marked as being implemented on <a href="https://github.com/Hoverbear/rust-rosetta">GitHub</a> or on <a href="https://rosettacode.org/wiki/Rust">the wiki</a>.</p>
+    <p>Looking to help out? You can:
+      <ul>
+        <li>Implement any unimplemented tasks, and open a pull request.</li>
+        <li>Copy tasks that are only on the wiki to the GitHub repository by opening a pull request (don't forget to write a test!).</li>
+        <li>Copy tasks that are only in the GitHub repository to the wiki.</li>
+      </ul>
+    </p>
     <div id="tasks">
+      <small>Loading...</small>
     </div>
     <script id="tasks-template" type="text/x-handlebars-template">
       <input class="search" placeholder="Search" />
       <input type="radio" name="filter" value="all" checked>All</input>
-      <input type="radio" name="filter" value="local">Local Only</input>
-      <input type="radio" name="filter" value="remote">Remote Only</input>
+      <input type="radio" name="filter" value="local">GitHub Only</input>
+      <input type="radio" name="filter" value="remote">Wiki Only</input>
       <input type="radio" name="filter" value="unimplemented">Unimplemented</input>
       <table id="tasks">
         <thead>
@@ -36,6 +48,9 @@
         </tbody>
       </table>
     </script>
+    <footer>
+      <p>CSS created for <a href="http://arewewebyet.com">arewewebyet.com</a> by <a href=http://chrismorgan.info/>Chris Morgan</a> et al.; licensed <a rel=license href=http://creativecommons.org/licenses/by/3.0/>CC-BY</a>.</p>
+    </footer>
     <script type="text/javascript">
       var tasksTemplate = Handlebars.compile(document.getElementById('tasks-template').innerText);
       var firebase = new Firebase("https://rosetta-coverage.firebaseio.com/");
