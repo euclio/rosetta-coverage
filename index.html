@@ -73,7 +73,7 @@
           element.addEventListener('click', function(event) {
             taskList.filter();
 
-            var filter = event.srcElement.value;
+            var filter = (event.srcElement || event.target).value;
             taskList.filter(function(item) {
               if (filter === 'local') {
                 return item.values().local === 'Yes' && item.values().remote === 'No';
